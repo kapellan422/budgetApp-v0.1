@@ -63,14 +63,12 @@ let appData = {
     },
     chooseIncome: function() {
         let items = "";
-        let flag = true;
         console.log("0"+items);
-        while(flag==true){           
+        while(true){           
             items = prompt("Что принесет дополнительный доход?(Перечислите через запятую)", "");
             console.log("1"+items);
                 if(items != null){
                     if(items != "") {
-                        flag == false;
                         appData.income = items.split(', ');
                         console.log("2"+items);
                         break;
@@ -86,11 +84,22 @@ let appData = {
                 }
             
         }
-    }
+    },
+    displayArray: function(arr) {
+        console.log("Способы доп заработка: ");
+        arr.forEach(element => console.log(element));
+    },
+    displayObject: function(obj) {
+        console.log("Наша программа включается в себя данные: ");
+        for (let key in obj) {
+            console.log("key " + key + " value " + obj[key]);
+        }
+    },
 };
 
 appData.chooseIncome();
-
+console.log(appData.income);
+appData.displayObject(appData);
 
 
 
