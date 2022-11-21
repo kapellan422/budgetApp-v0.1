@@ -49,7 +49,7 @@ let appData = {
     checkSavings: function() {
         if (appData.savings == true) {
             let save = +prompt("Какова сумма накоплений?"),
-                percent = +prompt("Под какой процентр?");
+                percent = +prompt("Под какой процент?");
     
             appData.monthIncome = save/100/12*percent;
             alert("Доход в месяц с вашего депозита: " + appData.monthIncome);    
@@ -63,24 +63,19 @@ let appData = {
     },
     chooseIncome: function() {
         let items = "";
-        console.log("0"+items);
         while(true){           
             items = prompt("Что принесет дополнительный доход?(Перечислите через запятую)", "");
-            console.log("1"+items);
                 if(items != null){
                     if(items != "") {
                         appData.income = items.split(', ');
-                        console.log("2"+items);
                         break;
                     }
                     else {
                         alert("Пожалуйста, не оставляйте поле пустым");
-                        console.log("3"+items);
                     }     
                 }
                 else {
                     alert("Пожалуйста, ответьте на вопрос");
-                    console.log("4"+items);
                 }
             
         }
@@ -97,9 +92,9 @@ let appData = {
     },
 };
 
-appData.chooseIncome();
-console.log(appData.income);
-appData.displayObject(appData);
+// appData.chooseIncome();
+// console.log(appData.income);
+// appData.displayObject(appData);
 
 
 
